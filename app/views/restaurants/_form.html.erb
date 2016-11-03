@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :category %>
-    <%= f.number_field :category %>
+    <%= f.select(:category, options_for_select(["chinese", "italian", "japanese", "french", "belgian"], @restaurant.category), {}, {class: "form-control"}) %>
   </div>
 
   <div class="actions">

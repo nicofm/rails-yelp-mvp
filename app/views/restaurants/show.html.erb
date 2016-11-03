@@ -4,7 +4,7 @@
   <strong>Name:</strong>
   <%= @restaurant.name %>
 </p>
-
+<%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
 <p>
   <strong>Address:</strong>
   <%= @restaurant.address %>
@@ -19,6 +19,13 @@
   <strong>Category:</strong>
   <%= @restaurant.category %>
 </p>
+
+<% @restaurant.reviews.each do |message| %>
+<%= message.content %>
+<%= message.rating %>
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
